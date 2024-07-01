@@ -2,32 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.custom-transition {
+  transition: all 0.5s;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+#nav_area ul li:last-child {
+  border-bottom: 0;
+}
+
+.custom_collapse {
+  max-width: 60px;
+}
+
+.custom_collapse #nav_area ul li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.custom_collapse #nav_area ul li span {
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.custom_collapse .logout .shape {
+  transition: all 0.5s;
+  max-width: 70%;
+  padding-left: 0.6rem;
+}
+
+.custom_collapse .logout .shape span {
+  display: none;
+}
+
+.custom_container {
+  transition: all 0.5s;
+  padding-top: 65px;
+  padding-left: 0;
+}
+
+@media (min-width: 950px) {
+  .custom_container {
+    padding-left: 270px;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .container_collapse_mode {
+    padding-left: 65px;
   }
 }

@@ -1,6 +1,18 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+// Imported Fontawesome Globally
+import Layout from "@/Components/Layout/Layout";
+import { config, library } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
+// Setup Fontawesome Globally
+config.autoAddCss = false;
+library.add(fas, far, fab);
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,7 +23,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-secondary`}>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }
